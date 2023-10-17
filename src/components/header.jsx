@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export default function Header() {
   const categoryItems = [
     { label: 'ABOUT', id: 'contact' },
-    { label: 'PROJECT', id: 'project' },
     { label: 'SKILL', id: 'skill' },
+    { label: 'PROJECT', id: 'project' },
   ];
 
   return (
