@@ -25,11 +25,13 @@ export default function Header() {
 }
 
 const HeaderStyle = styled.div`
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 64px;
   width: 100%;
+  z-index: 100%;
   background-color: white;
   .header {
     display: flex;
