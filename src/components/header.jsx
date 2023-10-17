@@ -29,13 +29,14 @@ const HeaderStyle = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 64px;
-  padding: 0px 24px;
-  margin: 10px 24px;
+  width: 100%;
+  background-color: white;
   .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding: 0px 24px;
   }
   .header-logo {
     display: flex;
