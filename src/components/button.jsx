@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { TbArrowBigDownLinesFilled } from 'react-icons/tb';
 
 export default function Button() {
@@ -10,24 +10,33 @@ export default function Button() {
   );
 }
 
+const ArrowAnimation = keyframes`
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+`;
+
 const ButtonStyle = styled.button`
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
+  position: relative;
+  margin: 0 auto;
+  bottom: 40px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   width: 50px;
   height: 50px;
-  background-color: grey;
+  background-color: #98afba;
   border: none;
-  border-radius: 30px;
+  border-radius: 50%;
+  animation: ${ArrowAnimation} 2s infinite;
 `;
 
 const Arrow = styled(TbArrowBigDownLinesFilled)`
-  z-index: 100%;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
 `;

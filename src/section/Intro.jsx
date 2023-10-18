@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Button from '../components/button';
+import 'animate.css';
 
 const waveAnimation = keyframes`
   0% {
@@ -78,6 +79,8 @@ const IntroStyle = styled.div`
     color: #b7e8eb;
     font-weight: 800;
     font-size: 8rem;
+    animation: zoomIn;
+    animation-duration: 2s;
   }
 `;
 
