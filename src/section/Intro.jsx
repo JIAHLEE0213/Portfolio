@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import Button from '../components/button';
 
 const waveAnimation = keyframes`
   0% {
@@ -86,6 +87,7 @@ export default function Intro() {
       <Ocean>
         <Wave></Wave>
         <Wave></Wave>
+        <Button />
       </Ocean>
       <section id="intro">
         <div className="intro-box">
