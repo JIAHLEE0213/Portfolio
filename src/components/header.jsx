@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default function Header() {
   const categoryItems = [
-    { label: 'ABOUT', id: 'contact' },
+    { label: 'ABOUT', id: 'about' },
     { label: 'SKILL', id: 'skill' },
     { label: 'PROJECT', id: 'project' },
   ];
@@ -38,7 +38,7 @@ const HeaderStyle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: 0px 24px;
+    padding: 20px 30px;
   }
   .header-logo {
     display: flex;
@@ -53,7 +53,7 @@ const HeaderStyle = styled.div`
     flex-direction: row;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0px 10px 0px 0px;
   }
 `;
 
