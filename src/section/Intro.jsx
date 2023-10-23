@@ -27,7 +27,7 @@ const Ocean = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #015871;
+  background: rgba(1, 88, 113, 1);
 `;
 
 const Wave = styled.div`
@@ -58,7 +58,7 @@ const IntroStyle = styled.div`
     ellipse at center,
     rgba(255, 254, 234, 1) 0%,
     rgba(255, 254, 234, 1) 35%,
-    #b7e8eb 100%
+    rgba(183, 232, 235, 1) 100%
   );
   .intro-box {
     display: flex;
