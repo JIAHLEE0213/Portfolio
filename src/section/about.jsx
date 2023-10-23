@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/button';
+import { Contact } from '../constants/contact';
+import 'animate.css';
 
 export default function About() {
   return (
@@ -31,9 +33,15 @@ export default function About() {
           </li>
         </ul>
         <div className="contact-container">
-          <div className="github"></div>
-          <div className="Email"></div>
-          <div className="velog"></div>
+          {Contact.map(({ icon, type, content }) => (
+            <ContentBox className="content-box" key={type}>
+              <div className="icon">{icon}</div>
+              <div className="text-box">
+                <p className="text">{type}</p>
+                <p className="content">{content}</p>
+              </div>
+            </ContentBox>
+          ))}
         </div>
       </div>
       <Button />
@@ -46,14 +54,13 @@ const ProfileBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
 
   .about-box {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 7rem;
+    height: 100vh;
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -103,10 +110,42 @@ const ProfileBox = styled.section`
     background-repeat: no-repeat;
   }
   .card-container {
-    margin-bottom: 3rem;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+`;
+
+const ContentBox = styled.div`
+  width: 270px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+
+  :hover {
+    animation: flash;
+    animation-duration: 2s;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    margin: 0px 21px;
+  }
+  .text-box {
+  }
+  .text {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  p {
+    margin: 0;
   }
 `;
