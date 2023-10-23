@@ -93,7 +93,7 @@ const ProfileBox = styled.section`
     width: 30vw;
     font-size: 2rem;
     line-height: 3rem;
-    margin: 2rem 8rem 4rem 8rem;
+    margin: 2rem 5rem;
     list-style: none;
   }
   .strong {

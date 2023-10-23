@@ -10,13 +10,13 @@ export const Contact = [
     content: 'JIAHLEE0213',
   },
   {
-    icon: <SiVelog />,
-    type: 'Velog',
-    content: 'TechLog',
-  },
-  {
     icon: <HiOutlineMail />,
     type: 'E-mail',
     content: 'ja7943@naver.com',
+  },
+  {
+    icon: <SiVelog />,
+    type: 'Velog',
+    content: 'TechLog',
   },
 ];
