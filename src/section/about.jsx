@@ -34,8 +34,16 @@ export default function About() {
           </li>
         </ul>
         <div className="contact-container">
-          {Contact.map(({ icon, type, content }) => (
-            <ContentBox className="content-box" key={type}>
+          {Contact.map(({ icon, type, content, link }) => (
+            <ContentBox
+              className="content-box"
+              key={type}
+              onClick={() => {
+                if (link) {
+                  window.location.href = link;
+                }
+              }}
+            >
               <div className="icon">{icon}</div>
               <div className="text-box">
                 <p className="text">{type}</p>

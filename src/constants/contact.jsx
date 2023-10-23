@@ -8,15 +8,18 @@ export const Contact = [
     icon: <AiFillGithub />,
     type: 'Github',
     content: 'JIAHLEE0213',
+    link: 'https://github.com/JIAHLEE0213',
   },
   {
     icon: <HiOutlineMail />,
     type: 'E-mail',
     content: 'ja7943@naver.com',
+    link: 'mailto:ja7943@naver.com',
   },
   {
     icon: <SiVelog />,
     type: 'Velog',
     content: 'TechLog',
+    link: 'https://velog.io/@azd2013',
   },
 ];
