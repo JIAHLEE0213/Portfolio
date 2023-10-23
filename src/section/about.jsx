@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Button from '../components/button';
 import { Contact } from '../constants/contact';
 import 'animate.css';
+import 'hover.css/css/hover-min.css';
 
 export default function About() {
   return (
@@ -116,6 +117,18 @@ const ProfileBox = styled.section`
   }
 `;
 
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
 const ContentBox = styled.div`
   width: 270px;
   height: 100px;
@@ -128,11 +141,9 @@ const ContentBox = styled.div`
   box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
   cursor: pointer;
 
-  :hover {
-    animation: flash;
-    animation-duration: 2s;
+  &:hover {
+    animation: ${pulse} 1s; /* pulse 애니메이션 적용 */
   }
-
   .icon {
     display: flex;
     align-items: center;
