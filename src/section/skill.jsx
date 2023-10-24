@@ -58,7 +58,6 @@ const SkillStyle = styled.div`
   display: flex;
   justify-content: center;
   height: 100vh;
-
   .skill-container {
     display: flex;
     align-items: center;
@@ -83,11 +82,29 @@ const SkillStyle = styled.div`
     border-image-slice: 1; /* 테두리의 양쪽 모두에 그라데이션을 적용합니다. */
     background-color: white;
     cursor: pointer;
-    margin: 2rem 5rem;
+    margin: 2rem 15rem 2rem 5rem;
   }
   .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .skill-container {
+      flex-direction: column;
+    }
+    .stack-box {
+      flex-direction: row;
+    }
+    .stack-button {
+      margin: 1rem 1.5rem;
+    }
+    .skills-list {
+      height: 30vh;
+    }
   }
 `;
 
