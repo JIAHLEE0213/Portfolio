@@ -4,46 +4,35 @@ import styled from 'styled-components';
 import Button from '../components/button';
 
 export default function Skill() {
-  const [selectedStack, setSelectedStack] = useState('frontend');
+  const stacks = {
+    Frontend: Frontend,
+    Library: Library,
+    ETC: Etc,
+  };
+  const [selectedStack, setSelectedStack] = useState('Frontend');
 
   const handleStackButtonClick = (stack) => {
     setSelectedStack(stack);
   };
 
-  let skillsToDisplay = [];
-  if (selectedStack === 'frontend') {
-    skillsToDisplay = Frontend;
-  } else if (selectedStack === 'Library') {
-    skillsToDisplay = Library;
-  } else if (selectedStack === 'ETC') {
-    skillsToDisplay = Etc;
-  }
+  const DisplaySkills = stacks[selectedStack];
 
   return (
     <SkillStyle>
       <div className="skill-container">
         <div className="stack-box">
-          <button
-            onClick={() => handleStackButtonClick('frontend')}
-            className="stack-button"
-          >
-            Frontend
-          </button>
-          <button
-            onClick={() => handleStackButtonClick('Library')}
-            className="stack-button"
-          >
-            Library
-          </button>
-          <button
-            onClick={() => handleStackButtonClick('ETC')}
-            className="stack-button"
-          >
-            ETC
-          </button>
+          {Object.keys(stacks).map((stack) => (
+            <button
+              key={stack}
+              onClick={() => handleStackButtonClick(stack)}
+              className="stack-button"
+            >
+              {stack}
+            </button>
+          ))}
         </div>
         <div className="skills-list">
-          {skillsToDisplay.map((skill, index) => (
+          {DisplaySkills.map((skill, index) => (
             <ListStyle key={index} className="skills-box">
               <div className="skill-icon">{skill.icon}</div>
               <p className="skill-name">{skill.name}</p>
