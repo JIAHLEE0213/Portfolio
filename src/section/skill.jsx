@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Frontend, Library, Etc } from '../constants/skills';
 import styled from 'styled-components';
+import Button from '../components/button';
 
 export default function Skill() {
   const [selectedStack, setSelectedStack] = useState('frontend');
@@ -50,17 +51,22 @@ export default function Skill() {
           ))}
         </div>
       </div>
+      <Button />
     </SkillStyle>
   );
 }
 
 const SkillStyle = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 100vh;
   .skill-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    height: 100vh;
   }
   .stack-box {
     display: flex;
