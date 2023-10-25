@@ -16,6 +16,9 @@ export default function Project() {
                 <p className="project-title">{title}</p>
                 <p className="project-subtitle">{subtitle}</p>
               </div>
+              <div className="project-detail">
+                <button className="detail-button">Detail</button>
+              </div>
             </ListStyle>
           ))}
         </div>
@@ -71,5 +74,27 @@ const ListStyle = styled.div`
   }
   .project-text {
     padding: 0 3vw;
+  }
+  .project-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .detail-button {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    background: #9ce7eb;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  .detail-button:active,
+  .detail-button:focus {
+    box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
   }
 `;
