@@ -1,7 +1,6 @@
 import React from 'react';
 import { Projects } from '../constants/projects';
 import styled from 'styled-components';
-import Button from '../components/button';
 
 export default function Project() {
   return (
@@ -23,7 +22,6 @@ export default function Project() {
           ))}
         </div>
       </div>
-      <Button />
     </ProjectStyle>
   );
 }
@@ -50,8 +48,6 @@ const ProjectStyle = styled.div`
     font-size: 2.5rem;
     font-weight: 700;
     margin: 2rem 0rem;
-  }
-  .project-list {
   }
 `;
 
@@ -92,6 +88,9 @@ const ListStyle = styled.div`
     background: #9ce7eb;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
+  }
+  .detail-button:hover {
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
   }
   .detail-button:active,
   .detail-button:focus {
