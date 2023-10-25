@@ -1,27 +1,26 @@
 import React from 'react';
 import { Projects } from '../constants/projects';
 import styled from 'styled-components';
+import Button from '../components/button';
 
 export default function Project() {
   return (
     <ProjectStyle>
       <div className="project-container">
-        <div className="project-title">
-          <h1 className="text-project">Project</h1>
-          <h2 className="text-click">click</h2>
-        </div>
-        <ListStyle className="project-list">
+        <div className="text-project">Project</div>
+        <div className="project-list">
           {Projects.map(({ img, title, subtitle }) => (
-            <div key={title} className="project">
+            <ListStyle key={title} className="project">
               <div className="project-img">{img}</div>
               <div className="project-text">
                 <p className="project-title">{title}</p>
                 <p className="project-subtitle">{subtitle}</p>
               </div>
-            </div>
+            </ListStyle>
           ))}
-        </ListStyle>
+        </div>
       </div>
+      <Button />
     </ProjectStyle>
   );
 }
@@ -29,7 +28,6 @@ export default function Project() {
 const ProjectStyle = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   background-image: linear-gradient(
@@ -41,18 +39,27 @@ const ProjectStyle = styled.div`
   .project-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+  }
+  .text-project {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2rem 0rem;
+  }
+  .project-list {
   }
 `;
 
 const ListStyle = styled.div`
   display: flex;
+  flex-direction: column;
   width: 310px;
   height: 460px;
   background-color: white;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
-
   img {
     width: 100%;
     height: 200px;
