@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Projects } from '../constants/projects';
 import styled from 'styled-components';
+import Detail from '../components/detail';
 
 export default function Project() {
+  const [isModal, setIsModal] = useState(false);
+
+  const openModal = () => {
+    setIsModal(true);
+  };
+  const closeModal = () => {
+    setIsModal(false);
+  };
+
   return (
     <ProjectStyle>
       <div className="project-container">
@@ -16,12 +26,15 @@ export default function Project() {
                 <p className="project-subtitle">{subtitle}</p>
               </div>
               <div className="project-detail">
-                <button className="detail-button">Detail</button>
+                <button className="detail-button" onClick={openModal}>
+                  Detail
+                </button>
               </div>
             </ListStyle>
           ))}
         </div>
       </div>
+      {isModal && <Detail closeModal={closeModal} />}
     </ProjectStyle>
   );
 }
