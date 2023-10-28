@@ -31,7 +31,6 @@ const HeaderStyle = styled.div`
   align-items: center;
   min-height: 64px;
   width: 100%;
-  z-index: 100%;
   background-color: white;
   .header {
     display: flex;

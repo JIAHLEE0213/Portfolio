@@ -24,16 +24,12 @@ export default function Detail({ closeModal }) {
             <div className="close-container" onClick={closeModal}>
               <AiFillCloseCircle className="close-button" />
             </div>
-            <div className="explain-box">
+            <div className="explain1-box">
               <div className="detail-img">{img}</div>
               <div className="project-box">
                 <DetailBox className="members-box">
                   <p className="project">{project}</p>
                   <div className="explain-members">{members}</div>
-                </DetailBox>
-                <DetailBox className="period-box">
-                  <p>기간</p>
-                  <div className="explain-period">{period}</div>
                 </DetailBox>
                 <DetailBox className="deploy-box">
                   <p>Deploy</p>
@@ -41,11 +37,6 @@ export default function Detail({ closeModal }) {
                     <div className="explain-deploy">{deploy}</div>
                   </a>
                 </DetailBox>
-              </div>
-            </div>
-
-            <div className="explain-container">
-              <div className="explain-box">
                 <DetailBox className="repository-box">
                   <p>Repository</p>
                   <a
@@ -55,6 +46,15 @@ export default function Detail({ closeModal }) {
                   >
                     <div className="explain-repo">{repository}</div>
                   </a>
+                </DetailBox>
+              </div>
+            </div>
+
+            <div className="explain-container">
+              <div className="explain2-box">
+                <DetailBox className="period-box">
+                  <p>기간</p>
+                  <div className="explain-period">{period}</div>
                 </DetailBox>
                 <DetailBox className="pr-box">
                   <p>소개</p>
@@ -86,11 +86,12 @@ const DetailStyle = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 200vh;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 1rem;
+  margin-top: 20px;
   .detail-container {
     position: fixed;
     display: flex;
@@ -100,19 +101,30 @@ const DetailStyle = styled.div`
     border-radius: 10px;
     padding: 2rem;
     height: 32rem;
+    width: 750px;
   }
   .explain-container {
-    margin-left: 2rem;
+    display: flex;
     height: 100%;
+    width: 100%;
   }
-  .explain-box {
+  .explain1-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    width: 70%;
+  }
+  .explain2-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 1.5rem;
   }
   img {
-    width: 100%;
+    width: 300px;
     height: 200px;
     border-radius: 10px 10px 0px 0px;
   }
@@ -131,6 +143,9 @@ const DetailStyle = styled.div`
 const DetailBox = styled.div`
   display: flex;
   flex-direction: column;
+  a {
+    color: gray;
+  }
   p {
     font-size: 1.3rem;
     font-weight: 600;
@@ -143,20 +158,23 @@ const DetailBox = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     width: fit-content;
+    margin-bottom: 15px;
   }
   &.members-box {
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: center;
   }
   .explain-members {
     margin-left: 10px;
+    padding-top: 15px;
   }
   .explain-impl {
     margin: 0;
+    padding-left: 25px;
   }
   .project {
-    margin-bottom: 0;
+    font-size: 1.8rem;
   }
 `;
 Detail.propTypes = {

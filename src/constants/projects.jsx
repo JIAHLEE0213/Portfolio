@@ -14,8 +14,15 @@ export const Projects = [
     period: '23.08.24 ~ 23.09.22',
     deploy: 'https://celebee.kro.kr/',
     repository: 'https://github.com/JIAHLEE0213/Celebee',
-    introduce: '모임',
-    implement: ['Figma 작업', '무한 스크롤', '카카오 OAuth'],
+    introduce:
+      "'Celebee'는 내가 관심있는 분야의 모임을 생성하고 참여도 하며 새로운 친구를 사귀고 함께 활동을 하기 위한 페이지를 만들었습니다.",
+    implement: [
+      'Figma 작업',
+      '메인(Home)페이지 작업',
+      '무한 스크롤',
+      '회원가입 페이지 작업',
+      ' 카카오 OAuth',
+    ],
     stacks: 'React, React Router, Redux, Style-Component, AWS, Node.js, Axios',
   },
 ];
