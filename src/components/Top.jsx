@@ -36,7 +36,7 @@ export default function Top() {
 const TopStyle = styled.div`
   display: flex;
   position: fixed;
-  bottom: 40px;
+  bottom: 30px;
   right: 40px;
   width: 50px;
   height: 50px;
