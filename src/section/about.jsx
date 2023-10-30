@@ -4,8 +4,9 @@ import Button from '../components/button';
 import { Contact } from '../constants/contact';
 import 'animate.css';
 import 'hover.css/css/hover-min.css';
+import PropTypes from 'prop-types';
 
-export default function About() {
+export default function About({ nextClick }) {
   return (
     <ProfileBox>
       <div className="about-box">
@@ -53,7 +54,7 @@ export default function About() {
           ))}
         </div>
       </div>
-      <Button />
+      <Button onClick={nextClick} />
     </ProfileBox>
   );
 }
@@ -168,3 +169,5 @@ const ContentBox = styled.div`
     margin: 0;
   }
 `;
+
+About.propTypes = { nextClick: PropTypes.func.isRequired };

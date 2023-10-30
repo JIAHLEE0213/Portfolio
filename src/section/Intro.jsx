@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Button from '../components/button';
 import 'animate.css';
+import PropTypes from 'prop-types';
 
 const waveAnimation = keyframes`
   0% {
@@ -84,13 +85,15 @@ const IntroStyle = styled.div`
   }
 `;
 
-export default function Intro() {
+Intro.propTypes = { nextClick: PropTypes.func.isRequired };
+
+export default function Intro({ nextClick }) {
   return (
     <IntroStyle>
       <Ocean>
         <Wave></Wave>
         <Wave></Wave>
-        <Button />
+        <Button onClick={nextClick} />
       </Ocean>
       <section id="intro">
         <div className="intro-box">

@@ -2,9 +2,12 @@ import React, { useRef } from 'react';
 import Project from '../section/project';
 import About from '../section/about';
 import Skill from '../section/skill';
+import Top from '../components/Top';
+import Intro from '../section/Intro';
 
 export default function Main() {
   const sections = [
+    { id: 'intro', component: <Intro /> },
     { id: 'about', component: <About /> },
     { id: 'skill', component: <Skill /> },
     { id: 'project', component: <Project /> },
@@ -39,6 +42,7 @@ export default function Main() {
           })}
         </div>
       ))}
+      <Top />
     </div>
   );
 }
