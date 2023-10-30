@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Button from '../components/button';
 import 'animate.css';
+import PropTypes from 'prop-types';
 
 const waveAnimation = keyframes`
   0% {
@@ -37,7 +38,7 @@ const Wave = styled.div`
   top: -198px;
   left: 0;
   right: 0;
-  width: 3400px;
+  width: 6400px;
   height: 198px;
   margin: 0;
   animation: ${waveAnimation} 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
@@ -84,17 +85,19 @@ const IntroStyle = styled.div`
   }
 `;
 
-export default function Intro() {
+Intro.propTypes = { nextClick: PropTypes.func.isRequired };
+
+export default function Intro({ nextClick }) {
   return (
     <IntroStyle>
       <Ocean>
         <Wave></Wave>
         <Wave></Wave>
-        <Button />
+        <Button onClick={nextClick} />
       </Ocean>
       <section id="intro">
         <div className="intro-box">
-          <span className="intro">{`Jiah's portofolio`}</span>
+          <span className="intro">{`Jiah's Portfolio`}</span>
         </div>
       </section>
     </IntroStyle>

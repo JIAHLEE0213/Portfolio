@@ -1,10 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { TbArrowBigDownLinesFilled } from 'react-icons/tb';
+import PropTypes from 'prop-types';
 
-export default function Button() {
+export default function Button({ onClick }) {
   return (
-    <ButtonStyle className="button-box">
+    <ButtonStyle className="button-box" onClick={onClick}>
       <Arrow />
     </ButtonStyle>
   );
@@ -40,3 +41,5 @@ const Arrow = styled(TbArrowBigDownLinesFilled)`
   font-size: 30px;
   color: #ffffff;
 `;
+
+Button.propTypes = { onClick: PropTypes.func.isRequired };

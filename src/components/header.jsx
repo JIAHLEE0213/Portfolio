@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export default function Header() {
@@ -8,13 +8,38 @@ export default function Header() {
     { label: 'PROJECT', id: 'project' },
   ];
 
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const scrollToSection = (sectionid) => {
+    const section = document.getElementById(sectionid);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const headerMenu = (itemid) => {
+    setSelectedItem(itemid === selectedItem ? null : itemid);
+    if (itemid) {
+      scrollToSection(itemid);
+    }
+  };
   return (
     <HeaderStyle>
       <div className="header">
-        <div className="header-logo">JIAH</div>
+        <div className="header-logo" onClick={scrollToTop}>
+          JIAH
+        </div>
         <ul className="header-category">
           {categoryItems.map((item) => (
-            <CategoryItem key={item.id} className="header-categoty-items">
+            <CategoryItem
+              key={item.id}
+              className="header-categoty-items"
+              onClick={() => headerMenu(item.id)}
+            >
               {item.label}
             </CategoryItem>
           ))}

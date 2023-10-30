@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Frontend, Library, Etc } from '../constants/skills';
 import styled from 'styled-components';
 import Button from '../components/button';
+import PropTypes from 'prop-types';
 
-export default function Skill() {
+export default function Skill({ nextClick }) {
   const stacks = {
     Frontend: Frontend,
     Library: Library,
@@ -40,7 +41,7 @@ export default function Skill() {
           ))}
         </div>
       </div>
-      <Button />
+      <Button onClick={nextClick} />
     </SkillStyle>
   );
 }
@@ -119,3 +120,5 @@ const ListStyle = styled.div`
     font-size: 1.5rem;
   }
 `;
+
+Skill.propTypes = { nextClick: PropTypes.func.isRequired };
