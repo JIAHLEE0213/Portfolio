@@ -38,7 +38,7 @@ const Wave = styled.div`
   top: -198px;
   left: 0;
   right: 0;
-  width: 3400px;
+  width: 6400px;
   height: 198px;
   margin: 0;
   animation: ${waveAnimation} 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
