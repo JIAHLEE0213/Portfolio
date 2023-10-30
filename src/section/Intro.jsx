@@ -94,7 +94,7 @@ export default function Intro() {
       </Ocean>
       <section id="intro">
         <div className="intro-box">
-          <span className="intro">{`Jiah's portofolio`}</span>
+          <span className="intro">{`Jiah's Portfolio`}</span>
         </div>
       </section>
     </IntroStyle>
