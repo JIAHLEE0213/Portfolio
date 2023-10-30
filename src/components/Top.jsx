@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowAltCircleUp } from 'react-icons/fa';
 import styled from 'styled-components';
 
 export default function Top() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <TopStyle className="button-box" onClick={scrollToTop}>
+    <TopStyle
+      className={`button-box ${isVisible ? 'visible' : 'hidden'}`}
+      onClick={scrollToTop}
+    >
       <FaArrowAltCircleUp className="icon" />
     </TopStyle>
   );
@@ -27,5 +47,11 @@ const TopStyle = styled.div`
   .icon {
     font-size: 50px;
     color: #98afba;
+  }
+  &.visibla {
+    display: flex;
+  }
+  &.hidden {
+    display: none;
   }
 `;
