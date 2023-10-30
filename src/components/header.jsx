@@ -17,6 +17,10 @@ export default function Header() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const headerMenu = (itemid) => {
     setSelectedItem(itemid === selectedItem ? null : itemid);
     if (itemid) {
@@ -26,7 +30,9 @@ export default function Header() {
   return (
     <HeaderStyle>
       <div className="header">
-        <div className="header-logo">JIAH</div>
+        <div className="header-logo" onClick={scrollToTop}>
+          JIAH
+        </div>
         <ul className="header-category">
           {categoryItems.map((item) => (
             <CategoryItem
