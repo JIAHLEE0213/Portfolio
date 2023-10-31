@@ -14,7 +14,7 @@ export default function Project() {
   };
 
   return (
-    <ProjectStyle>
+    <ProjectStyle isModal={isModal}>
       <div className="project-container">
         <div className="text-project">Project</div>
         <div className="project-list">
@@ -58,17 +58,32 @@ const ProjectStyle = styled.div`
     height: 100vh;
   }
   .text-project {
+    color: #2a272a;
     font-size: 2.5rem;
     font-weight: 700;
     margin: 2rem 0rem;
   }
+
+  ${({ isModal }) =>
+    isModal &&
+    `
+      &:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); 
+      }
+    `}
 `;
 
 const ListStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 310px;
-  height: 460px;
+  height: 29rem;
   background-color: white;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
@@ -78,11 +93,15 @@ const ListStyle = styled.div`
     border-radius: 10px 10px 0px 0px;
   }
   .project-title {
+    color: #4b4a54;
     font-size: 1.8rem;
     font-weight: 600;
   }
+  .project-subtitle {
+    font-size: 1rem;
+  }
   .project-text {
-    padding: 0 3vw;
+    padding: 0 2.5vw;
   }
   .project-detail {
     display: flex;

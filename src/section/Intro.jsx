@@ -83,6 +83,12 @@ const IntroStyle = styled.div`
     animation: zoomIn;
     animation-duration: 2s;
   }
+  @media (max-width: 930px) {
+    .intro {
+      text-align: center;
+      font-size: 7rem;
+    }
+  }
 `;
 
 Intro.propTypes = { nextClick: PropTypes.func.isRequired };

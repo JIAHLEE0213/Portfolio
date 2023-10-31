@@ -92,6 +92,7 @@ const DetailStyle = styled.div`
   transform: translate(-50%, -50%);
   font-size: 1rem;
   margin-top: 20px;
+  z-index: 1;
   .detail-container {
     position: fixed;
     display: flex;
@@ -138,6 +139,32 @@ const DetailStyle = styled.div`
     cursor: pointer;
     color: #9ce7eb;
   }
+  @media (max-width: 900px) {
+    padding-top: 2rem;
+    .detail-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30rem;
+      height: 600px;
+      padding: 1rem;
+    }
+    .explain1-box {
+      width: 100%;
+    }
+    img {
+      display: none;
+    }
+    .explain-container {
+      align-items: center;
+      width: 100%;
+    }
+    .explain2-box {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
 `;
 
 const DetailBox = styled.div`
@@ -147,7 +174,7 @@ const DetailBox = styled.div`
     color: gray;
   }
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     background-image: linear-gradient(
       90deg,
@@ -166,15 +193,54 @@ const DetailBox = styled.div`
     align-items: center;
   }
   .explain-members {
-    margin-left: 10px;
+    margin-left: 0.7rem;
     padding-top: 15px;
   }
   .explain-impl {
     margin: 0;
-    padding-left: 25px;
+    padding-left: 1.8rem;
   }
   .project {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    p {
+      margin: 0.7rem;
+    }
+    .explain-members {
+      margin: 0;
+      padding: 0;
+    }
+    &.deploy-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .explain-deploy {
+      padding-top: 0.5rem;
+    }
+    &.repository-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &.period-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .explain-pr {
+      margin-left: 0.7rem;
+    }
+    .explain-stacks {
+      margin-left: 0.7rem;
+    }
+    .explain-impl {
+      margin-left: 0.5rem;
+    }
   }
 `;
 Detail.propTypes = {
