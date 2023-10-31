@@ -92,7 +92,7 @@ const DetailStyle = styled.div`
   transform: translate(-50%, -50%);
   font-size: 1rem;
   margin-top: 20px;
-  z-index: 1000;
+  z-index: 1;
   .detail-container {
     position: fixed;
     display: flex;
@@ -201,7 +201,7 @@ const DetailBox = styled.div`
     padding-left: 1.8rem;
   }
   .project {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   @media (max-width: 900px) {
     display: flex;
