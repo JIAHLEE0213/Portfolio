@@ -83,9 +83,9 @@ const IntroStyle = styled.div`
     animation: zoomIn;
     animation-duration: 2s;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 930px) {
     .intro {
-      text-align: center; /* 텍스트를 가운데 정렬하는 속성 추가 */
+      text-align: center;
       font-size: 7rem;
     }
   }

@@ -138,6 +138,31 @@ const DetailStyle = styled.div`
     cursor: pointer;
     color: #9ce7eb;
   }
+  @media (max-width: 900px) {
+    .detail-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30rem;
+      height: 580px;
+      padding: 1rem;
+    }
+    .explain1-box {
+      width: 100%;
+    }
+    img {
+      display: none;
+    }
+    .explain-container {
+      align-items: center;
+      width: 100%;
+    }
+    .explain2-box {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
 `;
 
 const DetailBox = styled.div`
@@ -175,6 +200,40 @@ const DetailBox = styled.div`
   }
   .project {
     font-size: 1.8rem;
+  }
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    p {
+      margin-bottom: 0.5rem;
+    }
+    &.deploy-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .explain-deploy {
+      margin-left: 10px;
+      padding-top: 0.5rem;
+    }
+    &.repository-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .explain-repo {
+      margin-left: 10px;
+      padding-top: 0.5rem;
+    }
+    &.period-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .explain-period {
+      margin-left: 10px;
+      padding-top: 0.5rem;
+    }
   }
 `;
 Detail.propTypes = {
