@@ -58,6 +58,7 @@ const ProjectStyle = styled.div`
     height: 100vh;
   }
   .text-project {
+    color: gray;
     font-size: 2.5rem;
     font-weight: 700;
     margin: 2rem 0rem;

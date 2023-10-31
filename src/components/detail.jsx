@@ -140,12 +140,13 @@ const DetailStyle = styled.div`
     color: #9ce7eb;
   }
   @media (max-width: 900px) {
+    padding-top: 2rem;
     .detail-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 30rem;
-      height: 580px;
+      height: 600px;
       padding: 1rem;
     }
     .explain1-box {
@@ -173,7 +174,7 @@ const DetailBox = styled.div`
     color: gray;
   }
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     background-image: linear-gradient(
       90deg,
@@ -192,12 +193,12 @@ const DetailBox = styled.div`
     align-items: center;
   }
   .explain-members {
-    margin-left: 10px;
+    margin-left: 0.7rem;
     padding-top: 15px;
   }
   .explain-impl {
     margin: 0;
-    padding-left: 25px;
+    padding-left: 1.8rem;
   }
   .project {
     font-size: 1.8rem;
@@ -206,7 +207,11 @@ const DetailBox = styled.div`
     display: flex;
     flex-direction: column;
     p {
-      margin-bottom: 0.5rem;
+      margin: 0.7rem;
+    }
+    .explain-members {
+      margin: 0;
+      padding: 0;
     }
     &.deploy-box {
       display: flex;
@@ -214,7 +219,6 @@ const DetailBox = styled.div`
       align-items: center;
     }
     .explain-deploy {
-      margin-left: 10px;
       padding-top: 0.5rem;
     }
     &.repository-box {
@@ -222,18 +226,20 @@ const DetailBox = styled.div`
       flex-direction: row;
       align-items: center;
     }
-    .explain-repo {
-      margin-left: 10px;
-      padding-top: 0.5rem;
-    }
+
     &.period-box {
       display: flex;
       flex-direction: row;
       align-items: center;
     }
-    .explain-period {
-      margin-left: 10px;
-      padding-top: 0.5rem;
+    .explain-pr {
+      margin-left: 0.7rem;
+    }
+    .explain-stacks {
+      margin-left: 0.7rem;
+    }
+    .explain-impl {
+      margin-left: 0.5rem;
     }
   }
 `;
