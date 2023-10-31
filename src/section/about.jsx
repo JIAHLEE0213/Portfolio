@@ -76,8 +76,9 @@ const ProfileBox = styled.section`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-top: 30px;
       ul {
-        margin: 2rem 0;
+        margin: 0.7rem 0;
       }
       li {
         width: 80vw;
@@ -167,6 +168,9 @@ const ContentBox = styled.div`
   }
   p {
     margin: 0;
+  }
+  @media (max-width: 900px) {
+    margin-bottom: 20px;
   }
 `;
 
