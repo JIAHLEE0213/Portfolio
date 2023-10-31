@@ -92,6 +92,7 @@ const DetailStyle = styled.div`
   transform: translate(-50%, -50%);
   font-size: 1rem;
   margin-top: 20px;
+  z-index: 1000;
   .detail-container {
     position: fixed;
     display: flex;

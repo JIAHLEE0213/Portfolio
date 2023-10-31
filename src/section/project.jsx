@@ -14,7 +14,7 @@ export default function Project() {
   };
 
   return (
-    <ProjectStyle>
+    <ProjectStyle isModal={isModal}>
       <div className="project-container">
         <div className="text-project">Project</div>
         <div className="project-list">
@@ -62,6 +62,19 @@ const ProjectStyle = styled.div`
     font-weight: 700;
     margin: 2rem 0rem;
   }
+  ${({ isModal }) =>
+    isModal &&
+    `
+      &:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); 
+      }
+    `}
 `;
 
 const ListStyle = styled.div`
