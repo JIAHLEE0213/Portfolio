@@ -66,19 +66,19 @@ const SkillStyle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
-    border: 5px solid transparent; /* 투명한 선을 만듭니다. */
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    border-image: linear-gradient(
-      90deg,
-      rgba(255, 254, 234, 1),
-      rgba(183, 232, 235, 1)
-    );
-    border-image-slice: 1; /* 테두리의 양쪽 모두에 그라데이션을 적용합니다. */
-    background-color: white;
+    background-image: linear-gradient(50deg, #ffffff, #6dd5fa, #2980b9);
+    border: none;
     cursor: pointer;
     margin: 2rem 15rem 2rem 5rem;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .stack-button:hover {
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
   }
   .skills-list {
     display: grid;
@@ -90,16 +90,20 @@ const SkillStyle = styled.div`
     justify-content: center;
     align-items: center;
     .skill-container {
+      display: flex;
+      justify-content: center;
       flex-direction: column;
     }
     .stack-box {
       flex-direction: row;
+      margin-bottom: 20px;
     }
     .stack-button {
-      margin: 1rem 1.5rem;
+      margin: 1.5rem;
     }
     .skills-list {
       height: 30vh;
+      padding-bottom: 30px;
     }
   }
 `;
@@ -108,16 +112,17 @@ const ListStyle = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid black;
   width: 160px;
   height: 70px;
   margin: 1.5rem;
   padding: 0 0.5rem;
+  border-radius: 20px;
+  box-shadow: rgba(149, 160, 165, 0.5) 0px 8px 24px;
   .skill-icon {
     display: flex;
     align-items: center;
     padding: 0px 13px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 `;
 
