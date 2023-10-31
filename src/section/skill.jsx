@@ -77,6 +77,9 @@ const SkillStyle = styled.div`
     font-weight: 500;
     font-size: 18px;
   }
+  .stack-button:hover {
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+  }
   .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
