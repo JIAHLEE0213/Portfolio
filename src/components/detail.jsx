@@ -165,6 +165,13 @@ const DetailStyle = styled.div`
       margin: 0;
     }
   }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    .detail-container {
+      width: 300px;
+      height: 27rem;
+      margin-bottom: 3.5rem;
+    }
+  }
 `;
 
 const DetailBox = styled.div`
@@ -240,6 +247,18 @@ const DetailBox = styled.div`
     }
     .explain-impl {
       margin-left: 0.5rem;
+    }
+  }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    font-size: 0.6rem;
+    p {
+      font-size: 0.8rem;
+    }
+    .explain-members {
+      font-size: 0.8rem;
+    }
+    .project {
+      font-size: 1.2rem;
     }
   }
 `;

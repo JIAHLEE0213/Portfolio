@@ -79,6 +79,14 @@ const HeaderStyle = styled.div`
     margin: 0;
     padding: 0px 10px 0px 0px;
   }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    .header-logo {
+      padding: 0;
+    }
+    .header-categoty-items {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 const CategoryItem = styled.li`

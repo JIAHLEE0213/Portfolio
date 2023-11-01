@@ -89,6 +89,12 @@ const IntroStyle = styled.div`
       font-size: 7rem;
     }
   }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    .intro {
+      text-align: center;
+      font-size: 5rem;
+    }
+  }
 `;
 
 Intro.propTypes = { nextClick: PropTypes.func.isRequired };

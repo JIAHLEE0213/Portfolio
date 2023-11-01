@@ -90,6 +90,17 @@ const ProfileBox = styled.section`
         font-size: 1.3rem;
       }
     }
+    @media screen and (min-width: 375px) and (max-width: 440px) {
+      ul {
+        margin: 0;
+      }
+      .strong {
+        font-size: 1rem;
+      }
+      li {
+        font-size: 0.8rem;
+      }
+    }
   }
 
   ul {
@@ -171,6 +182,19 @@ const ContentBox = styled.div`
   }
   @media (max-width: 900px) {
     margin-bottom: 20px;
+  }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    width: 230px;
+    height: 70px;
+  }
+  .icon {
+    font-size: 1.5rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+  .content {
+    font-size: 0.8rem;
   }
 `;
 
