@@ -187,15 +187,15 @@ const ContentBox = styled.div`
   @media screen and (min-width: 375px) and (max-width: 440px) {
     width: 170px;
     height: 55px;
-  }
-  .icon {
-    font-size: 1.3rem;
-  }
-  .text {
-    font-size: 0.8rem;
-  }
-  .content {
-    font-size: 0.6rem;
+    .icon {
+      font-size: 1.3rem;
+    }
+    .text {
+      font-size: 0.8rem;
+    }
+    .content {
+      font-size: 0.6rem;
+    }
   }
 `;
 
