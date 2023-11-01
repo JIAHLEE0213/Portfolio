@@ -168,8 +168,8 @@ const DetailStyle = styled.div`
   @media screen and (min-width: 375px) and (max-width: 440px) {
     .detail-container {
       width: 300px;
-      height: 27rem;
-      margin-bottom: 3.5rem;
+      height: 440px;
+      margin-top: 10px;
     }
   }
 `;
