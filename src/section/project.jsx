@@ -77,6 +77,12 @@ const ProjectStyle = styled.div`
         background: rgba(0, 0, 0, 0.3); 
       }
     `}
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    .text-project {
+      font-size: 2rem;
+      margin: 3rem 0 1rem 0;
+    }
+  }
 `;
 
 const ListStyle = styled.div`
@@ -127,5 +133,35 @@ const ListStyle = styled.div`
   .detail-button:active,
   .detail-button:focus {
     box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    width: 15rem;
+    height: 21rem;
+    img {
+      width: 100%;
+      height: 150px;
+    }
+    .project-text {
+      padding: 0.5rem 0.8rem 0 0.8rem;
+    }
+    .project-title {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .project-subtitle {
+      font-size: 0.9rem;
+      margin: 0.5rem 0rem;
+    }
+    .project-detail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .detail-button {
+      width: 85px;
+      height: 35px;
+      font-size: 1rem;
+    }
   }
 `;
