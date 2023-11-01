@@ -106,6 +106,13 @@ const SkillStyle = styled.div`
       padding-bottom: 30px;
     }
   }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    .stack-button {
+      width: 80px;
+      height: 80px;
+      font-size: 13px;
+    }
+  }
 `;
 
 const ListStyle = styled.div`
@@ -123,6 +130,15 @@ const ListStyle = styled.div`
     align-items: center;
     padding: 0px 13px;
     font-size: 1.8rem;
+  }
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    font-size: 0.7rem;
+    width: 130px;
+    height: 50px;
+    margin: 1rem;
+  }
+  .skill-icon {
+    font-size: 1.3rem;
   }
 `;
 
