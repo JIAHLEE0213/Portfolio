@@ -80,7 +80,7 @@ const ProjectStyle = styled.div`
   @media screen and (min-width: 375px) and (max-width: 440px) {
     .text-project {
       font-size: 2rem;
-      margin: 3rem 0 1rem 0;
+      margin: 2rem 0;
     }
   }
 `;

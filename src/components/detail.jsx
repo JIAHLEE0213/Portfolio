@@ -255,7 +255,7 @@ const DetailBox = styled.div`
       font-size: 0.8rem;
     }
     .explain-members {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .project {
       font-size: 1.2rem;
