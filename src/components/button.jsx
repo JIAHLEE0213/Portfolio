@@ -35,6 +35,10 @@ const ButtonStyle = styled.button`
   border: none;
   border-radius: 50%;
   animation: ${ArrowAnimation} 2s infinite;
+  @media screen and (min-width: 375px) and (max-width: 440px) {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 const Arrow = styled(TbArrowBigDownLinesFilled)`

@@ -98,6 +98,7 @@ const ProfileBox = styled.section`
         font-size: 1rem;
       }
       li {
+        margin: 0;
         font-size: 0.8rem;
       }
     }
@@ -184,17 +185,17 @@ const ContentBox = styled.div`
     margin-bottom: 20px;
   }
   @media screen and (min-width: 375px) and (max-width: 440px) {
-    width: 230px;
-    height: 70px;
+    width: 170px;
+    height: 55px;
   }
   .icon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .text {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .content {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 `;
 
