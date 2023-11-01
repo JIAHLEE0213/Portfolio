@@ -63,18 +63,17 @@ const IntroStyle = styled.div`
   );
   .intro-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100vh;
   }
   .intro {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
     animation: zoomIn;
     animation-duration: 1.5s;
     color: #b7e8eb;
@@ -90,9 +89,13 @@ const IntroStyle = styled.div`
     }
   }
   @media screen and (min-width: 375px) and (max-width: 440px) {
+    overflow-x: hidden;
     .intro {
       text-align: center;
       font-size: 5rem;
+    }
+    ${Ocean} {
+      display: none;
     }
   }
 `;
@@ -105,11 +108,11 @@ export default function Intro({ nextClick }) {
       <Ocean>
         <Wave></Wave>
         <Wave></Wave>
-        <Button onClick={nextClick} />
       </Ocean>
       <section id="intro">
         <div className="intro-box">
           <span className="intro">{`Jiah's Portfolio`}</span>
+          <Button onClick={nextClick} />
         </div>
       </section>
     </IntroStyle>
