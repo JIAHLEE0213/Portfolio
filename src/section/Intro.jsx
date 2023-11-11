@@ -70,6 +70,7 @@ const IntroStyle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100%;
     list-style: none;
     /* margin: 0; */
@@ -111,7 +112,7 @@ export default function Intro({ nextClick }) {
       </Ocean>
       <section id="intro">
         <div className="intro-box">
-          <span className="intro">{`Jiah's Portfolio`}</span>
+          <span className="intro">{`Frontend Portfolio`}</span>
           <Button onClick={nextClick} />
         </div>
       </section>
