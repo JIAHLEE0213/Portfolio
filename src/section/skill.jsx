@@ -69,7 +69,7 @@ const SkillStyle = styled.div`
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    background-image: linear-gradient(50deg, #ffffff, #6dd5fa, #2980b9);
+    background-image: linear-gradient(50deg, #ffffff, #43c6ac, #f8ffae);
     border: none;
     cursor: pointer;
     margin: 2rem 15rem 2rem 5rem;
