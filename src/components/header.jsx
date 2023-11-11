@@ -80,6 +80,7 @@ const HeaderStyle = styled.div`
     padding: 0px 10px 0px 0px;
   }
   @media screen and (min-width: 375px) and (max-width: 440px) {
+    z-index: 1;
     .header-logo {
       padding: 0;
     }
