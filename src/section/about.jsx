@@ -11,15 +11,6 @@ export default function About({ nextClick }) {
     <ProfileBox>
       <div className="about-box">
         <ul>
-          {/* <li>
-            <span className="underline">개인의 성장이</span>
-            <br />
-            {`곧 `}
-            <span className="underline">
-              <span className="strong">기업의 성장</span>
-            </span>
-            이라 생각합니다.
-          </li> */}
           <li>
             <span className="underline">
               <span className="strong">가독성</span>
@@ -101,7 +92,7 @@ const ProfileBox = styled.section`
     }
     @media screen and (min-width: 375px) and (max-width: 440px) {
       ul {
-        margin: 0;
+        margin: 1.8rem 0rem;
       }
       .strong {
         font-size: 1rem;
