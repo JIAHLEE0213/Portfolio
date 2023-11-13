@@ -13,7 +13,7 @@ export const Frontend = [
   {
     stack: 'frontend',
     icon: <RiJavascriptFill />,
-    name: 'Javscript',
+    name: 'Javascript',
   },
   {
     stack: 'frontend',
