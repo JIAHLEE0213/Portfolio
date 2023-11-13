@@ -20,7 +20,7 @@ export default function Project() {
   return (
     <ProjectStyle isModal={isModal}>
       <div className="project-container">
-        <div className="text-project">Project</div>
+        <div className="text-project">Project List</div>
         <div className="project-list">
           {Projects.map((project) => (
             <ListStyle key={project.title} className="project">
@@ -68,10 +68,10 @@ const ProjectStyle = styled.div`
     height: 100vh;
   }
   .text-project {
-    color: #2a272a;
-    font-size: 2.5rem;
+    color: rgba(67, 174, 186, 1);
+    font-size: 3rem;
     font-weight: 700;
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 4rem 0rem;
   }
 
   ${({ isModal }) =>
