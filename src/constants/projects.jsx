@@ -4,7 +4,10 @@ export const Projects = [
   {
     img: (
       // eslint-disable-next-line no-undef
-      <img src={process.env.PUBLIC_URL + '/img/Celebee.png'} alt="Celebee" />
+      <img
+        src={process.env.PUBLIC_URL + '/img/Portfolio.png'}
+        alt="Portfolio"
+      />
     ),
     project: 'Solo Project',
     title: 'Portfolio',
@@ -15,7 +18,7 @@ export const Projects = [
     repository: 'https://github.com/JIAHLEE0213/portfolio',
     introduce:
       '프론트엔드 개발자로서 취업을 위한 프로젝트입니다. 차별점을 둔 포트폴리오르 만들어 보기 위해 웹을 개발하였으며 Vercel을 통해 배포를 하였습니다.',
-    implement: ['스크롤 이동'],
+    implement: ['스크롤 이벤트', '애니메이션 효과'],
     stacks: 'React,Style-Component, Node.js, Vercel',
   },
   {
