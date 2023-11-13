@@ -71,7 +71,7 @@ const ProjectStyle = styled.div`
     color: rgba(67, 174, 186, 1);
     font-size: 3rem;
     font-weight: 700;
-    margin: 2rem 0rem 4rem 0rem;
+    margin: 2rem 0rem 3rem 0rem;
   }
 
   ${({ isModal }) =>
