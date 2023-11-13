@@ -4,6 +4,26 @@ export const Projects = [
   {
     img: (
       // eslint-disable-next-line no-undef
+      <img
+        src={process.env.PUBLIC_URL + '/img/Portfolio.png'}
+        alt="Portfolio"
+      />
+    ),
+    project: 'Solo Project',
+    title: 'Portfolio',
+    subtitle: '취업을 위한 프론트엔드 개발자 포트폴리오입니다.',
+    members: 'Solo',
+    period: '23.10.13 ~ 23.11.11',
+    deploy: 'https://jiah-portfolio.vercel.app/',
+    repository: 'https://github.com/JIAHLEE0213/portfolio',
+    introduce:
+      '프론트엔드 개발자로서 취업을 위한 프로젝트입니다. 차별점을 둔 포트폴리오르 만들어 보기 위해 웹을 개발하였으며 Vercel을 통해 배포를 하였습니다.',
+    implement: ['스크롤 이벤트', '애니메이션 효과'],
+    stacks: 'React,Style-Component, Node.js, Vercel',
+  },
+  {
+    img: (
+      // eslint-disable-next-line no-undef
       <img src={process.env.PUBLIC_URL + '/img/Celebee.png'} alt="Celebee" />
     ),
     project: 'Team Project',
@@ -21,7 +41,7 @@ export const Projects = [
       '메인(Home)페이지 작업',
       '무한 스크롤',
       '회원가입 페이지 작업',
-      ' 카카오 OAuth',
+      '카카오 OAuth',
     ],
     stacks: 'React, React Router, Redux, Style-Component, AWS, Node.js, Axios',
   },

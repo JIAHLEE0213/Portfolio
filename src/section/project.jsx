@@ -4,29 +4,36 @@ import styled from 'styled-components';
 import Detail from '../components/detail';
 
 export default function Project() {
+  const [selectedProject, setSelectedProject] = useState(null);
   const [isModal, setIsModal] = useState(false);
 
-  const openModal = () => {
+  const openModal = (project) => {
+    setSelectedProject(project);
     setIsModal(true);
   };
+
   const closeModal = () => {
+    setSelectedProject(null);
     setIsModal(false);
   };
 
   return (
     <ProjectStyle isModal={isModal}>
       <div className="project-container">
-        <div className="text-project">Project</div>
+        <div className="text-project">Project List</div>
         <div className="project-list">
-          {Projects.map(({ img, title, subtitle }) => (
-            <ListStyle key={title} className="project">
-              <div className="project-img">{img}</div>
+          {Projects.map((project) => (
+            <ListStyle key={project.title} className="project">
+              <div className="project-img">{project.img}</div>
               <div className="project-text">
-                <p className="project-title">{title}</p>
-                <p className="project-subtitle">{subtitle}</p>
+                <p className="project-title">{project.title}</p>
+                <p className="project-subtitle">{project.subtitle}</p>
               </div>
               <div className="project-detail">
-                <button className="detail-button" onClick={openModal}>
+                <button
+                  className="detail-button"
+                  onClick={() => openModal(project)}
+                >
                   Detail
                 </button>
               </div>
@@ -34,14 +41,17 @@ export default function Project() {
           ))}
         </div>
       </div>
-      {isModal && <Detail closeModal={closeModal} />}
+      {isModal && selectedProject && (
+        <Detail project={selectedProject} closeModal={closeModal} />
+      )}
     </ProjectStyle>
   );
 }
 
 const ProjectStyle = styled.div`
   display: flex;
-  flex-direction: column;
+
+  justify-content: center;
   align-items: center;
   height: 100vh;
   background-image: linear-gradient(
@@ -58,10 +68,10 @@ const ProjectStyle = styled.div`
     height: 100vh;
   }
   .text-project {
-    color: #2a272a;
-    font-size: 2.5rem;
+    color: rgba(67, 174, 186, 1);
+    font-size: 3rem;
     font-weight: 700;
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 4rem 0rem;
   }
 
   ${({ isModal }) =>
@@ -77,6 +87,10 @@ const ProjectStyle = styled.div`
         background: rgba(0, 0, 0, 0.3); 
       }
     `}
+  .project-list {
+    display: flex;
+    flex-direction: row;
+  }
   @media screen and (min-width: 375px) and (max-width: 440px) {
     .text-project {
       font-size: 2rem;
@@ -93,6 +107,7 @@ const ListStyle = styled.div`
   background-color: white;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
+  margin: 0 2rem;
   img {
     width: 100%;
     height: 200px;

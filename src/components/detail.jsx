@@ -1,82 +1,72 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Projects } from '../constants/projects';
 import styled from 'styled-components';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-export default function Detail({ closeModal }) {
+export default function Detail({ closeModal, project }) {
   return (
     <DetailStyle>
-      {Projects.map(
-        ({
-          project,
-          img,
-          title,
-          members,
-          period,
-          deploy,
-          repository,
-          introduce,
-          implement,
-          stacks,
-        }) => (
-          <div key={title} className="detail-container">
-            <div className="close-container" onClick={closeModal}>
-              <AiFillCloseCircle className="close-button" />
-            </div>
-            <div className="explain1-box">
-              <div className="detail-img">{img}</div>
-              <div className="project-box">
-                <DetailBox className="members-box">
-                  <p className="project">{project}</p>
-                  <div className="explain-members">{members}</div>
-                </DetailBox>
-                <DetailBox className="deploy-box">
-                  <p>Deploy</p>
-                  <a href={deploy} target="_blank" rel="noopener noreferrer">
-                    <div className="explain-deploy">{deploy}</div>
-                  </a>
-                </DetailBox>
-                <DetailBox className="repository-box">
-                  <p>Repository</p>
-                  <a
-                    href={repository}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="explain-repo">{repository}</div>
-                  </a>
-                </DetailBox>
-              </div>
-            </div>
-
-            <div className="explain-container">
-              <div className="explain2-box">
-                <DetailBox className="period-box">
-                  <p>기간</p>
-                  <div className="explain-period">{period}</div>
-                </DetailBox>
-                <DetailBox className="pr-box">
-                  <p>소개</p>
-                  <div className="explain-pr">{introduce}</div>
-                </DetailBox>
-                <DetailBox className="impl-box">
-                  <p>구현 기능</p>
-                  <ul className="explain-impl">
-                    {implement.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </DetailBox>
-                <DetailBox className="stacks-box">
-                  <p>스택</p>
-                  <div className="explain-stacks">{stacks}</div>
-                </DetailBox>
-              </div>
-            </div>
+      <div key={project.title} className="detail-container">
+        <div className="close-container" onClick={closeModal}>
+          <AiFillCloseCircle className="close-button" />
+        </div>
+        <div className="explain1-box">
+          <div className="detail-img">
+            <img src={project.img.props.src} alt={project.title} />
           </div>
-        ),
-      )}
+          <div className="project-box">
+            <DetailBox className="members-box">
+              <p className="project">{project.project}</p>
+              <div className="explain-members">{project.members}</div>
+            </DetailBox>
+            <DetailBox className="deploy-box">
+              <p>Deploy</p>
+              <a
+                href={project.deploy}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="explain-deploy">{project.deploy}</div>
+              </a>
+            </DetailBox>
+            <DetailBox className="repository-box">
+              <p>Repository</p>
+              <a
+                href={project.repository}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="explain-repo">{project.repository}</div>
+              </a>
+            </DetailBox>
+          </div>
+        </div>
+
+        <div className="explain-container">
+          <div className="explain2-box">
+            <DetailBox className="period-box">
+              <p>기간</p>
+              <div className="explain-period">{project.period}</div>
+            </DetailBox>
+            <DetailBox className="pr-box">
+              <p>소개</p>
+              <div className="explain-pr">{project.introduce}</div>
+            </DetailBox>
+            <DetailBox className="impl-box">
+              <p>구현 기능</p>
+              <ul className="explain-impl">
+                {project.implement.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </DetailBox>
+            <DetailBox className="stacks-box">
+              <p>스택</p>
+              <div className="explain-stacks">{project.stacks}</div>
+            </DetailBox>
+          </div>
+        </div>
+      </div>
     </DetailStyle>
   );
 }
@@ -264,4 +254,5 @@ const DetailBox = styled.div`
 `;
 Detail.propTypes = {
   closeModal: PropTypes.func.isRequired,
+  project: PropTypes.object.isRequired,
 };

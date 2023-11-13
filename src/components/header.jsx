@@ -57,6 +57,7 @@ const HeaderStyle = styled.div`
   min-height: 64px;
   width: 100%;
   background-color: white;
+  z-index: 1;
   .header {
     display: flex;
     flex-direction: row;

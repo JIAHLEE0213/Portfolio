@@ -12,26 +12,26 @@ export default function About({ nextClick }) {
       <div className="about-box">
         <ul>
           <li>
-            <span className="underline">개인의 성장이</span>
-            <br />
-            {`곧 `}
             <span className="underline">
-              <span className="strong">기업의 성장</span>
+              <span className="strong">가독성</span>
+              {` 높은 코드`}
             </span>
-            이라 생각합니다.
+            {`에 대한 연구와  `}
+            <br />
+            {`협엽중에 발생하는 `}
+            <span className="underline">
+              <span className="strong">문제 해결</span>
+              {`을 즐기는 개발자로, `}
+            </span>
           </li>
           <li>
-            {`새로운 `}
-            <span className="strong">기술</span>
-            {`을 익히고 `}
-            <br />
+            {` 팀 내에서 `}
             <span className="underline">
-              <span className="strong">협업</span>
-              {`을 통해 `}
-              <span className="storng">문제를 해결</span>하는 과정에서
+              <span className="strong">긍정적인 영향</span>
+              {`과 `}
+              <span className="strong">생산성 향상</span>
             </span>
-            <br />
-            {` 즐거움을 느낍니다.`}
+            {`에 기여합니다.`}
           </li>
         </ul>
         <div className="contact-container">
@@ -92,7 +92,7 @@ const ProfileBox = styled.section`
     }
     @media screen and (min-width: 375px) and (max-width: 440px) {
       ul {
-        margin: 0;
+        margin: 1.8rem 0rem;
       }
       .strong {
         font-size: 1rem;
@@ -160,7 +160,7 @@ const ContentBox = styled.div`
   margin-bottom: 30px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 160, 165, 0.5) 0px 8px 24px;
   cursor: pointer;
 
   &:hover {
