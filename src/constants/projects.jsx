@@ -19,7 +19,7 @@ export const Projects = [
     introduce:
       '프론트엔드 개발자로서 취업을 위한 프로젝트입니다. 차별점을 둔 포트폴리오를 보여드리기 위해 웹 제작을 하였으며 Vercel을 통해 원활한 배포가 이루어졌습니다.',
     implement: ['스크롤 이벤트', '애니메이션 효과'],
-    stacks: 'React, Styled-Component, Node.js, Vercel',
+    stacks: 'React, Styled-components, Node.js, Vercel',
   },
   {
     img: (
@@ -43,6 +43,7 @@ export const Projects = [
       '회원가입 페이지 작업',
       '카카오 OAuth',
     ],
-    stacks: 'React, React Router, Redux, Styled-Component, AWS, Node.js, Axios',
+    stacks:
+      'React, React Router, Redux, Styled-components, AWS, Node.js, Axios',
   },
 ];
