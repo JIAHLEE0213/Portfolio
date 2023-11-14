@@ -78,7 +78,7 @@ const IntroStyle = styled.div`
     animation-duration: 1.5s;
     color: rgba(67, 174, 186, 1);
     font-weight: 800;
-    font-size: 8rem;
+    font-size: 8.5rem;
     animation: zoomIn;
     animation-duration: 2s;
   }
