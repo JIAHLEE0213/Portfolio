@@ -127,10 +127,11 @@ const ListStyle = styled.div`
   .project-detail {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     height: 100%;
   }
   .detail-button {
+    margin-bottom: 20px;
     font-size: 1rem;
     font-weight: 600;
     color: white;
