@@ -18,9 +18,9 @@ export default function About({ nextClick }) {
             </span>
             {`에 대한 연구와  `}
             <br />
-            {`협엽중에 발생하는 `}
+            {`협업 중에 발생하는 `}
             <span className="underline">
-              <span className="strong">문제 해결</span>
+              <span className="strong">문제의 해결</span>
               {`을 즐기는 개발자로, `}
             </span>
           </li>
