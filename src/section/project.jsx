@@ -122,7 +122,7 @@ const ListStyle = styled.div`
     font-size: 1rem;
   }
   .project-text {
-    padding: 0 2.5vw;
+    padding: 0 2rem;
   }
   .project-detail {
     display: flex;
