@@ -20,7 +20,11 @@ export default function Project() {
   return (
     <ProjectStyle isModal={isModal}>
       <div className="project-container">
-        <div className="text-project">Project List</div>
+        <div className="text-project">PROJECTS</div>
+        <div className="project-lists">
+          <div className="project-tab">Portfolio</div>
+          <div className="project-tab">Celebee</div>
+        </div>
         <div className="project-list">
           {Projects.map((project) => (
             <ListStyle key={project.title} className="project">
@@ -71,7 +75,6 @@ const ProjectStyle = styled.div`
     color: rgba(67, 174, 186, 1);
     font-size: 3rem;
     font-weight: 700;
-    margin: 2rem 0rem 3rem 0rem;
   }
 
   ${({ isModal }) =>
@@ -87,9 +90,29 @@ const ProjectStyle = styled.div`
         background: rgba(0, 0, 0, 0.3); 
       }
     `}
-  .project-list {
+
+  .project-lists {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+  }
+  .project-lists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .project-tab {
+    text-align: center;
+    border-radius: 40px;
+    font-size: 1.3rem;
+    width: 160px;
+    margin: 1.5rem;
+    padding: 0.5rem 0rem;
+    background-color: white;
+    box-shadow: rgba(149, 160, 165, 0.5) 0px 8px 24px;
+  }
+  .project-tab:hover {
+    cursor: pointer;
   }
   @media screen and (min-width: 375px) and (max-width: 440px) {
     .text-project {
