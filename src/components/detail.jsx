@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { AiFillCloseCircle } from 'react-icons/ai';
 
-export default function Detail({ closeModal, project }) {
+export default function Detail({ project }) {
   return (
     <DetailStyle>
       <div key={project.title} className="detail-container">
-        <div className="close-container" onClick={closeModal}>
-          <AiFillCloseCircle className="close-button" />
-        </div>
         <div className="explain1-box">
           <div className="detail-img">
             <img src={project.img.props.src} alt={project.title} />
@@ -73,18 +69,8 @@ export default function Detail({ closeModal, project }) {
 
 const DetailStyle = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 1rem;
-  margin-top: 20px;
-  z-index: 1;
   .detail-container {
-    position: fixed;
     display: flex;
     flex-direction: row;
     background-color: white;
@@ -92,7 +78,7 @@ const DetailStyle = styled.div`
     border-radius: 10px;
     padding: 2rem;
     height: 32rem;
-    width: 750px;
+    width: 60rem;
   }
   .explain-container {
     display: flex;
@@ -253,6 +239,5 @@ const DetailBox = styled.div`
   }
 `;
 Detail.propTypes = {
-  closeModal: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };

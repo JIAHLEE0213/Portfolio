@@ -1,60 +1,40 @@
 import React, { useState } from 'react';
-import { Projects } from '../constants/projects';
 import styled from 'styled-components';
+import { Projects } from '../constants/projects';
 import Detail from '../components/detail';
 
 export default function Project() {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isModal, setIsModal] = useState(false);
+  const [selectedTab, setSelectedTab] = useState(null);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
-    setIsModal(true);
-  };
-
-  const closeModal = () => {
-    setSelectedProject(null);
-    setIsModal(false);
+  const handleClick = (project) => {
+    setSelectedTab(project);
   };
 
   return (
-    <ProjectStyle isModal={isModal}>
+    <ProjectStyle>
       <div className="project-container">
         <div className="text-project">PROJECTS</div>
         <div className="project-lists">
-          <div className="project-tab">Portfolio</div>
-          <div className="project-tab">Celebee</div>
-        </div>
-        <div className="project-list">
           {Projects.map((project) => (
-            <ListStyle key={project.title} className="project">
-              <div className="project-img">{project.img}</div>
-              <div className="project-text">
-                <p className="project-title">{project.title}</p>
-                <p className="project-subtitle">{project.subtitle}</p>
-              </div>
-              <div className="project-detail">
-                <button
-                  className="detail-button"
-                  onClick={() => openModal(project)}
-                >
-                  Detail
-                </button>
-              </div>
-            </ListStyle>
+            <button
+              className="project-tab"
+              key={project.title}
+              onClick={() => handleClick(project)}
+            >
+              {project.title}
+            </button>
           ))}
         </div>
+        <div className="project-list">
+          {selectedTab && <Detail project={selectedTab} />}
+        </div>
       </div>
-      {isModal && selectedProject && (
-        <Detail project={selectedProject} closeModal={closeModal} />
-      )}
     </ProjectStyle>
   );
 }
 
 const ProjectStyle = styled.div`
   display: flex;
-
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -64,12 +44,13 @@ const ProjectStyle = styled.div`
     rgba(255, 254, 234, 1) 35%,
     rgba(183, 232, 235, 1) 100%
   );
+
   .project-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    width: 100%;
   }
   .text-project {
     color: rgba(67, 174, 186, 1);
@@ -93,23 +74,21 @@ const ProjectStyle = styled.div`
 
   .project-lists {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .project-lists {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     width: 100%;
+    justify-content: center;
   }
   .project-tab {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     border-radius: 40px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     width: 160px;
-    margin: 1.5rem;
+    margin: 1rem 2rem;
     padding: 0.5rem 0rem;
     background-color: white;
     box-shadow: rgba(149, 160, 165, 0.5) 0px 8px 24px;
+    border: none;
   }
   .project-tab:hover {
     cursor: pointer;
@@ -118,89 +97,6 @@ const ProjectStyle = styled.div`
     .text-project {
       font-size: 2rem;
       margin: 2rem 0;
-    }
-  }
-`;
-
-const ListStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 310px;
-  height: 29rem;
-  background-color: white;
-  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-  margin: 0 2rem;
-  img {
-    width: 100%;
-    height: 200px;
-    border-radius: 10px 10px 0px 0px;
-  }
-  .project-title {
-    color: #4b4a54;
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-  .project-subtitle {
-    font-size: 1rem;
-  }
-  .project-text {
-    padding: 0 2rem;
-  }
-  .project-detail {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100%;
-  }
-  .detail-button {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-    background: #9ce7eb;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-  }
-  .detail-button:hover {
-    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
-  }
-  .detail-button:active,
-  .detail-button:focus {
-    box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
-  }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
-    width: 15rem;
-    height: 21rem;
-    img {
-      width: 100%;
-      height: 150px;
-    }
-    .project-text {
-      padding: 0.5rem 0.8rem 0 0.8rem;
-    }
-    .project-title {
-      margin: 0;
-      font-size: 1.4rem;
-    }
-    .project-subtitle {
-      font-size: 0.9rem;
-      margin: 0.5rem 0rem;
-    }
-    .project-detail {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-    .detail-button {
-      width: 85px;
-      height: 35px;
-      font-size: 1rem;
     }
   }
 `;
