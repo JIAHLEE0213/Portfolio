@@ -4,7 +4,9 @@ import { Projects } from '../constants/projects';
 import Detail from '../components/detail';
 
 export default function Project() {
-  const [selectedTab, setSelectedTab] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(
+    Projects.find((project) => project.title === 'Portfolio'),
+  );
 
   const handleClick = (project) => {
     setSelectedTab(project);
@@ -49,13 +51,13 @@ const ProjectStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
   }
   .text-project {
     color: rgba(67, 174, 186, 1);
     font-size: 3rem;
     font-weight: 700;
+    margin-top: 3rem;
   }
 
   ${({ isModal }) =>
@@ -76,6 +78,7 @@ const ProjectStyle = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 10px;
   }
   .project-tab {
     display: flex;
@@ -92,6 +95,7 @@ const ProjectStyle = styled.div`
   }
   .project-tab:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
   }
   @media screen and (min-width: 375px) and (max-width: 440px) {
     .text-project {
