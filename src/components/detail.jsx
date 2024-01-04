@@ -1,53 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { GrDeploy } from 'react-icons/gr';
+import { AiFillGithub } from 'react-icons/ai';
 
-export default function Detail({ closeModal, project }) {
+export default function Detail({ project }) {
   return (
     <DetailStyle>
       <div key={project.title} className="detail-container">
-        <div className="close-container" onClick={closeModal}>
-          <AiFillCloseCircle className="close-button" />
-        </div>
         <div className="explain1-box">
           <div className="detail-img">
             <img src={project.img.props.src} alt={project.title} />
           </div>
           <div className="project-box">
+            <div className="deployrepo-box">
+              <div className="deploy-box">
+                <DeployRepo
+                  className="explain-deploy"
+                  onClick={() => window.open(project.deploy, '_blank')}
+                >
+                  <div className="icon">
+                    <GrDeploy />
+                  </div>
+                  <p>Deploy</p>
+                  <a
+                    href={project.deploy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                </DeployRepo>
+              </div>
+              <div className="repository-box">
+                <DeployRepo
+                  className="explain-repository"
+                  onClick={() => window.open(project.repository, '_blank')}
+                >
+                  <div className="icon">
+                    <AiFillGithub />
+                  </div>
+                  <p>Repository</p>
+                  <a
+                    href={project.repository}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                </DeployRepo>
+              </div>
+            </div>
             <DetailBox className="members-box">
               <p className="project">{project.project}</p>
               <div className="explain-members">{project.members}</div>
             </DetailBox>
-            <DetailBox className="deploy-box">
-              <p>Deploy</p>
-              <a
-                href={project.deploy}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="explain-deploy">{project.deploy}</div>
-              </a>
+            <DetailBox className="period-box">
+              <p>기간</p>
+              <div className="explain-period">{project.period}</div>
             </DetailBox>
-            <DetailBox className="repository-box">
-              <p>Repository</p>
-              <a
-                href={project.repository}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="explain-repo">{project.repository}</div>
-              </a>
+            <DetailBox className="stacks-box">
+              <p>스택</p>
+              <div className="explain-stacks">{project.stacks}</div>
             </DetailBox>
           </div>
         </div>
 
         <div className="explain-container">
           <div className="explain2-box">
-            <DetailBox className="period-box">
-              <p>기간</p>
-              <div className="explain-period">{project.period}</div>
-            </DetailBox>
             <DetailBox className="pr-box">
               <p>소개</p>
               <div className="explain-pr">{project.introduce}</div>
@@ -56,13 +72,11 @@ export default function Detail({ closeModal, project }) {
               <p>구현 기능</p>
               <ul className="explain-impl">
                 {project.implement.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index} className="impl-li">
+                    {item}{' '}
+                  </li>
                 ))}
               </ul>
-            </DetailBox>
-            <DetailBox className="stacks-box">
-              <p>스택</p>
-              <div className="explain-stacks">{project.stacks}</div>
             </DetailBox>
           </div>
         </div>
@@ -73,26 +87,26 @@ export default function Detail({ closeModal, project }) {
 
 const DetailStyle = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1rem;
-  margin-top: 20px;
-  z-index: 1;
+  font-size: 1.1rem;
   .detail-container {
-    position: fixed;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.09);
     border-radius: 10px;
     padding: 2rem;
-    height: 32rem;
-    width: 750px;
+    height: 57vh;
+    overflow-y: auto;
+    width: 55vw;
+    scrollbar-width: thin;
+    scrollbar-color: transparent;
+    &::-webkit-scrollbar {
+      width: 6px; /* 스크롤바의 너비 */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent; /* 스크롤바 색상 */
+    }
   }
   .explain-container {
     display: flex;
@@ -101,23 +115,32 @@ const DetailStyle = styled.div`
   }
   .explain1-box {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 70%;
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+  .deployrepo-box {
+    display: flex;
+    flex-direction: row;
   }
   .explain2-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    margin-left: 1.5rem;
+  }
+  .detail-img {
+    display: flex;
+    align-items: center;
   }
   img {
-    width: 300px;
+    display: flex;
+    width: 330px;
     height: 200px;
+    margin-right: 20px;
     border-radius: 10px 10px 0px 0px;
+  }
+  .project-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .close-button {
     font-size: 40px;
@@ -164,15 +187,35 @@ const DetailStyle = styled.div`
   }
 `;
 
+const DeployRepo = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0px 10px 10px 0px;
+  p {
+    text-decoration: underline;
+    margin: 0;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-right: 2px;
+  }
+`;
+
 const DetailBox = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
   a {
     color: gray;
   }
   p {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
     background-image: linear-gradient(
       90deg,
       rgba(255, 254, 234, 1),
@@ -182,7 +225,8 @@ const DetailBox = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     width: fit-content;
-    margin-bottom: 15px;
+    margin: 0;
+    margin-bottom: 5px;
   }
   &.members-box {
     display: flex;
@@ -191,7 +235,6 @@ const DetailBox = styled.div`
   }
   .explain-members {
     margin-left: 0.7rem;
-    padding-top: 15px;
   }
   .explain-impl {
     margin: 0;
@@ -200,6 +243,13 @@ const DetailBox = styled.div`
   .project {
     font-size: 1.6rem;
   }
+  .explain-pr {
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+
   @media (max-width: 900px) {
     display: flex;
     flex-direction: column;
@@ -214,9 +264,6 @@ const DetailBox = styled.div`
       display: flex;
       flex-direction: row;
       align-items: center;
-    }
-    .explain-deploy {
-      padding-top: 0.5rem;
     }
     &.repository-box {
       display: flex;
@@ -253,6 +300,5 @@ const DetailBox = styled.div`
   }
 `;
 Detail.propTypes = {
-  closeModal: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
 };
