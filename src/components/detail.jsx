@@ -33,7 +33,7 @@ export default function Detail({ project }) {
               <div className="repository-box">
                 <DeployRepo
                   className="explain-repository"
-                  onClick={() => window.open(project.deploy, '_blank')}
+                  onClick={() => window.open(project.repository, '_blank')}
                 >
                   <div className="icon">
                     <AiFillGithub />
@@ -72,7 +72,9 @@ export default function Detail({ project }) {
               <p>구현 기능</p>
               <ul className="explain-impl">
                 {project.implement.map((item, index) => (
-                  <li key={index}>{item} </li>
+                  <li key={index} className="impl-li">
+                    {item}{' '}
+                  </li>
                 ))}
               </ul>
             </DetailBox>
@@ -240,6 +242,12 @@ const DetailBox = styled.div`
   }
   .project {
     font-size: 1.6rem;
+  }
+  .explain-pr {
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 10px;
   }
 
   @media (max-width: 900px) {
