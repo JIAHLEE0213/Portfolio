@@ -160,11 +160,11 @@ const DetailStyle = styled.div`
       margin: 0;
     }
   }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
+  @media screen and (width: 375px) and (width: 600px) {
     .detail-container {
-      width: 300px;
-      height: 440px;
-      margin-top: 10px;
+      padding: 1rem;
+      width: 70vw;
+      height: 100vw;
     }
   }
 `;
@@ -245,7 +245,7 @@ const DetailBox = styled.div`
       margin: 0;
     }
   }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
+  @media screen and (min-width: 375px) and (max-width: 600px) {
     font-size: 0.6rem;
     p {
       font-size: 0.8rem;
