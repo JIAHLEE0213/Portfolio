@@ -153,36 +153,18 @@ const DetailStyle = styled.div`
     color: #9ce7eb;
   }
   @media (max-width: 900px) {
-    padding-top: 2rem;
-    .detail-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 30rem;
-      height: 600px;
-      padding: 1rem;
-    }
-    .explain1-box {
-      width: 100%;
-    }
     img {
       display: none;
     }
-    .explain-container {
-      align-items: center;
-      width: 100%;
-    }
-    .explain2-box {
-      display: flex;
-      flex-direction: column;
+    .explain1-box {
       margin: 0;
     }
   }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
+  @media screen and (width: 375px) and (width: 600px) {
     .detail-container {
-      width: 300px;
-      height: 440px;
-      margin-top: 10px;
+      padding: 1rem;
+      width: 70vw;
+      height: 100vw;
     }
   }
 `;
@@ -251,42 +233,19 @@ const DetailBox = styled.div`
   }
 
   @media (max-width: 900px) {
-    display: flex;
-    flex-direction: column;
-    p {
-      margin: 0.7rem;
-    }
-    .explain-members {
-      margin: 0;
-      padding: 0;
-    }
-    &.deploy-box {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    &.repository-box {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
     &.period-box {
       display: flex;
       flex-direction: row;
       align-items: center;
     }
+    .explain-period {
+      margin-left: 0.7rem;
+    }
     .explain-pr {
-      margin-left: 0.7rem;
-    }
-    .explain-stacks {
-      margin-left: 0.7rem;
-    }
-    .explain-impl {
-      margin-left: 0.5rem;
+      margin: 0;
     }
   }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
+  @media screen and (min-width: 375px) and (max-width: 600px) {
     font-size: 0.6rem;
     p {
       font-size: 0.8rem;

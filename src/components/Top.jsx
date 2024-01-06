@@ -54,9 +54,10 @@ const TopStyle = styled.div`
   &.hidden {
     display: none;
   }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
+  @media screen and (min-width: 375px) and (max-width: 600px) {
     width: 35px;
     height: 35px;
+    bottom: 10px;
 
     .icon {
       font-size: 35px;

@@ -97,10 +97,17 @@ const ProjectStyle = styled.div`
     cursor: pointer;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
   }
-  @media screen and (min-width: 375px) and (max-width: 440px) {
+  @media screen and (min-width: 375px) and (max-width: 600px) {
     .text-project {
       font-size: 2rem;
-      margin: 2rem 0;
+    }
+    .project-tab {
+      width: 120px;
+      font-size: 1.2rem;
+      margin: 0.8rem 1rem;
+    }
+    .project-lists {
+      margin: 0;
     }
   }
 `;
