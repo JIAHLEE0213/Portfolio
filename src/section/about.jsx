@@ -41,7 +41,7 @@ export default function About({ nextClick }) {
               key={type}
               onClick={() => {
                 if (link) {
-                  window.location.href = link;
+                  window.open(link, '_blank');
                 }
               }}
             >
