@@ -109,12 +109,10 @@ export default function Intro({ nextClick }) {
         <Wave></Wave>
         <Wave></Wave>
       </Ocean>
-      <section id="intro">
-        <div className="intro-box">
-          <span className="intro">{`Frontend Portfolio`}</span>
-          <Button onClick={nextClick} />
-        </div>
-      </section>
+      <div className="intro-box">
+        <span className="intro">{`Frontend Portfolio`}</span>
+        <Button onClick={nextClick} />
+      </div>
     </IntroStyle>
   );
 }
