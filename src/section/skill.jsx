@@ -90,24 +90,25 @@ const SkillStyle = styled.div`
   }
 
   @media (max-width: 900px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .skill-container {
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+
+      width: 100%;
     }
     .stack-box {
       flex-direction: row;
       margin-bottom: 20px;
     }
     .stack-button {
+      width: 100px;
+      height: 100px;
       margin: 1.5rem;
+      font-size: 1rem;
     }
     .skills-list {
-      height: 30vh;
-      padding-bottom: 30px;
+      height: auto;
     }
   }
   @media screen and (min-width: 375px) and (max-width: 440px) {
@@ -139,11 +140,27 @@ const ListStyle = styled.div`
   .skill-name {
     font-size: 1.2rem;
   }
+  @media (max-width: 900px) {
+    width: 100px;
+    height: 60px;
+    .skill-icon {
+      font-size: 1.5rem;
+    }
+    .skill-name {
+      font-size: 1rem;
+      margin: 10px 0px;
+    }
+  }
   @media screen and (min-width: 375px) and (max-width: 440px) {
     font-size: 0.7rem;
-    width: 130px;
+    width: 80px;
     height: 50px;
-    margin: 1rem;
+    .skill-icon {
+      font-size: 1.3rem;
+    }
+    .skill-name {
+      font-size: 0.8rem;
+    }
   }
 `;
 
