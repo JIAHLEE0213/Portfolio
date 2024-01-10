@@ -36,11 +36,11 @@ export default function Main() {
   return (
     <div className="">
       {sections.map((section) => (
-        <div key={section.id} id={section.id}>
+        <section key={section.id} id={section.id}>
           {React.cloneElement(section.component, {
             nextClick: nextClick,
           })}
-        </div>
+        </section>
       ))}
       <Top />
     </div>
