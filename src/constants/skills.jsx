@@ -8,6 +8,7 @@ import {
 import { RiJavascriptFill } from 'react-icons/ri';
 import { AiFillHtml5, AiFillGithub } from 'react-icons/ai';
 import { FaCss3Alt, FaReact, FaNodeJs, FaFigma, FaAws } from 'react-icons/fa';
+import { SiVercel } from 'react-icons/si';
 
 export const Frontend = [
   {
@@ -87,5 +88,11 @@ export const Etc = [
     icon: <SiPostman />,
     name: 'Postman',
     color: '#ff6c37',
+  },
+  {
+    stack: 'ETC',
+    icon: <SiVercel />,
+    name: 'Vercel',
+    color: '#000000',
   },
 ];
