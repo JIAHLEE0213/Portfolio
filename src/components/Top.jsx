@@ -58,7 +58,7 @@ const TopStyle = styled.div`
     width: 35px;
     height: 35px;
     bottom: 10px;
-
+    right: 10px;
     .icon {
       font-size: 35px;
     }
