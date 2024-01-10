@@ -35,7 +35,9 @@ export default function Skill({ nextClick }) {
         <div className="skills-list">
           {DisplaySkills.map((skill, index) => (
             <ListStyle key={index} className="skills-box">
-              <div className="skill-icon">{skill.icon}</div>
+              <div className="skill-icon" style={{ color: skill.color }}>
+                {skill.icon}
+              </div>
               <p className="skill-name">{skill.name}</p>
             </ListStyle>
           ))}
