@@ -17,13 +17,7 @@ export default function Detail({ project }) {
               <div className="deploy-box">
                 <DeployRepo
                   className="explain-deploy"
-                  onClick={() =>
-                    project.deploy === 'https://celebee.kro.kr/'
-                      ? window.alert(
-                          '현재 서버 이슈로 서비스 이용이 불가합니다. 곧 복구 예정이오니 상세 페이지 내용은 Repository에서 확인 부탁드립니다. (복구 예상 날짜 : 1/18)',
-                        )
-                      : window.open(project.deploy, '_blank')
-                  }
+                  onClick={() => window.open(project.deploy, '_blank')}
                 >
                   <div className="icon">
                     <GrDeploy />
